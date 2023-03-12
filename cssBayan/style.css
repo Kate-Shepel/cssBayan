@@ -1,0 +1,90 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color:rgb(243, 242, 241);
+}
+main {
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+.accordion {
+    margin: 1% auto;
+    padding: 0;
+    width: 40%;
+    transition: all 1.5s linear;
+    cursor: pointer;
+} 
+.accordion:hover {
+    color: black;
+    cursor: pointer;
+}
+.divider {
+    width: 100;
+    height: 0.125em;
+    border-bottom: solid 0.125em #cdd1d2;
+    padding-bottom: 2%;
+}   
+.accordion li {
+    list-style: none;
+    width: 100%;
+    transition: all 1.5s linear;
+}    
+.accordion li label {
+    padding: 2%;
+    display: block;
+    font-size: 1.5em;
+    color:#070574;
+    border-top: solid 0.125em #cdd1d2;
+    background-color: transparent;
+    transition: all 1.5s linear;
+    font-weight: 700;
+    cursor: pointer;
+}  
+.accordion label + input[type='radio'] {
+    display: none;
+    transition: all 1.5s linear;
+}    
+.accordion .content {
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 2%;
+    transition: all 1.5s linear;
+}
+.accordion .content img {
+    display: block;
+    width: 35%;
+    margin: 0 auto;
+    transition: all 1.5s linear;
+}
+.accordion label + input[type='radio']:checked + .content {
+    display: block;
+    background-color:rgb(170, 170, 170);
+}
+.accordion label + input[type='radio']:checked {
+    color: black;
+}
+.accordion label + input[type='radio']:checked + .content img {
+    border: solid 0.125em #030303;
+    width: 40%;
+    transform: scale(102%);
+}
+.accordion li label + input[type='radio']:hover + .content {
+    display: block;
+    background-color:rgb(226, 225, 224);
+}
+.accordion label + input[type='radio']:hover + .content img {
+    border: solid 0.125em #f8f3f3;
+    transform: scale(98%);
+}
