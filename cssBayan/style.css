@@ -13,7 +13,7 @@ body {
     background-color:rgb(243, 242, 241);
 }
 main {
-    font-size: 16px;
+    font-size: 1em;
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -25,6 +25,10 @@ main {
     transition: all 1.5s linear;
     cursor: pointer;
 } 
+label {
+    display: flex;
+    justify-content: space-between;
+}
 .accordion:hover {
     color: black;
     cursor: pointer;
@@ -41,7 +45,6 @@ main {
 }    
 .accordion li label {
     padding: 2%;
-    display: block;
     font-size: 1.5em;
     color:#0b09a2;
     border-top: solid 0.125em #cdd1d2;
@@ -49,6 +52,9 @@ main {
     transition: all 1.5s linear;
     font-weight: 700;
     cursor: pointer;
+}
+.accordion li label:first-child {
+    border-top: none;
 }
 .accordion label + input[type='radio'] {
     display: none;
@@ -68,32 +74,33 @@ main {
     transition: all 1s linear;
     text-align: center;
 }
-.accordion label + input[type='radio']:checked + .content {
+.accordion label + input[type='radio']:checked ~ .content {
     background-color:rgb(170, 170, 170);
     padding-top: 2%;
 }
-.accordion label + input[type='radio']:checked + .content img {
+.accordion label + input[type='radio']:checked ~ .content img {
     border: solid 0.125em #030303;
-    width: 40%;
+    width: 300px;
     transform: scale(102%);
 }
-.accordion label + input[type='radio']:checked + .content .divider {
+.accordion label + input[type='radio']:checked ~ .content .divider {
     padding-bottom: 2%;
 }
 .accordion li label:hover ~ .content {
-    /* display: block;*/
     background-color:rgb(226, 225, 224);
-    transition: all 5s ease-in-out; 
+    transition: all 1.5s ease-in-out; 
     padding-top: 2%;
 }
 .accordion li label:hover {
     color: rgb(102, 101, 101);
 }
-.accordion label + input[type='radio']:hover + .content img {
-    width: 40%;
-    /* border: solid 0.125em #f8f3f3;
-    transform: scale(98%);*/
+.accordion label + input[type='radio']:hover ~ .content img {
+    width: 300px;
 }
-.accordion label + input[type='radio']:hover + .content .divider {
+.accordion label + input[type='radio']:hover ~ .content .divider {
     padding-bottom: 2%;
+}
+.accordion:hover {
+    color: black;
+    cursor: pointer;
 }
